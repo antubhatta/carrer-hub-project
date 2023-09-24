@@ -1,8 +1,8 @@
-
+import { Link } from 'react-router-dom';
 import { MdLocationOn} from 'react-icons/md';
 import { AiFillDollarCircle} from 'react-icons/ai';
 const FeatureJob = ({job}) => {
-   const {logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job
+   const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary}=job
     return (
         <div className="bg-[#E8E8E8] rounded-lg border w-full border-solid pl-10 pt-10">
             <img className="mb-8" src={logo} alt="" />
@@ -22,7 +22,7 @@ const FeatureJob = ({job}) => {
                     <p className='text-base font-semibold text-[#757575]'>{salary}</p>
                 </div>
             </div>
-            <button className='border px-5 py-3 mb-12 rounded bg-gradient-to-r from-blue-400 to-purple-500 text-base text-[#FFF] font-extrabold'>View Details</button>
+            <Link to={`/job/${id}`}><button className='border px-5 py-3 mb-12 rounded bg-gradient-to-r from-blue-400 to-purple-500 text-base text-[#FFF] font-extrabold'>View Details</button></Link>
         </div>
     );
 };
